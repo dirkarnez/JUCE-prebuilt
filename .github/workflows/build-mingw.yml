@@ -49,6 +49,7 @@ jobs:
             gcc --version &&^
             cd JUCE &&^
             cmake.exe -G "MinGW Makefiles" ^
+            -DCMAKE_EXE_LINKER_FLAGS="-static" ^
             -DCMAKE_BUILD_TYPE=Release ^
             -DBUILD_SHARED_LIBS=OFF ^
             -DCMAKE_INSTALL_PREFIX="cmake-build/${{ env.cmakeInstallationPath }}" -B./cmake-build &&^
